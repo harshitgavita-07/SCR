@@ -17,13 +17,13 @@ SCR is infrastructure for autonomous AI agents. It provides a robust, extensible
 ## Installation
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 ```
 
 ## Quick Start
 
 ```typescript
-import { SCR } from '@scr/runtime';
+import { SCR } from '@scr-runtime/runtime';
 
 const scr = new SCR({
   target: 'chromium',
