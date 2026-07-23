@@ -1,1 +1,6 @@
-export type { UiElement, ElementBounds, UiSnapshot, Observer } from './observer.js';
+export type {
+  UiElement,
+  ElementBounds,
+  UiSnapshot,
+  Observer,
+} from './observer.js';

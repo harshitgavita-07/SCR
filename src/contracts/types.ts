@@ -1,4 +1,18 @@
 /**
+ * Configuration for the SCR runtime.
+ */
+export interface ScrConfig {
+  /** Application name */
+  readonly appName?: string;
+  /** Runtime version */
+  readonly version?: string;
+  /** Enable debug mode */
+  readonly debug?: boolean;
+  /** Log level */
+  readonly logLevel?: 'debug' | 'info' | 'warn' | 'error';
+}
+
+/**
  * Unique identifier for SCR components.
  *
  * @example
@@ -80,7 +94,7 @@ export interface ScrErrorData {
   code: ScrErrorCode;
   message: string;
   cause?: unknown;
-  context?: Record<string, unknown>;
+  context: Record<string, unknown>;
 }
 
 /**
@@ -88,7 +102,7 @@ export interface ScrErrorData {
  */
 export class ScrError extends Error {
   public readonly code: ScrErrorCode;
-  public readonly context?: Record<string, unknown>;
+  public readonly context: Record<string, unknown>;
 
   constructor(data: ScrErrorData) {
     super(data.message);
@@ -113,7 +127,7 @@ export class ScrError extends Error {
  */
 export function createInvalidConfigError(
   message: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.INVALID_CONFIG,
@@ -128,7 +142,7 @@ export function createInvalidConfigError(
 export function createNotFoundError(
   resource: string,
   id: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.NOT_FOUND,
@@ -143,7 +157,7 @@ export function createNotFoundError(
 export function createAlreadyExistsError(
   resource: string,
   id: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.ALREADY_EXISTS,
@@ -157,7 +171,7 @@ export function createAlreadyExistsError(
  */
 export function createInvalidStateError(
   message: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.INVALID_STATE,
@@ -172,7 +186,7 @@ export function createInvalidStateError(
 export function createTimeoutError(
   operation: string,
   timeoutMs: number,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.TIMEOUT,
@@ -186,7 +200,7 @@ export function createTimeoutError(
  */
 export function createPermissionDeniedError(
   message: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.PERMISSION_DENIED,
@@ -200,7 +214,7 @@ export function createPermissionDeniedError(
  */
 export function createResourceUnavailableError(
   resource: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.RESOURCE_UNAVAILABLE,
@@ -215,7 +229,7 @@ export function createResourceUnavailableError(
 export function createInternalError(
   message: string,
   cause?: unknown,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.INTERNAL_ERROR,
@@ -230,7 +244,7 @@ export function createInternalError(
  */
 export function createValidationError(
   message: string,
-  context?: Record<string, unknown>,
+  context: Record<string, unknown> = {}
 ): ScrError {
   return new ScrError({
     code: ScrErrorCode.VALIDATION_FAILED,

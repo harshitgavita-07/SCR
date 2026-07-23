@@ -1,5 +1,5 @@
 import type { ScrId, ScrStatus } from '../contracts/types.js';
-import { EventEmitter } from '../events/emitter.js';
+import type { ScrEventEmitter } from '../events/emitter.js';
 
 /**
  * Event emitted when a plan step starts.
@@ -114,7 +114,7 @@ export interface PlanResult {
 export interface ExecutionEngine {
   readonly id: ScrId;
   readonly status: ScrStatus;
-  readonly eventEmitter: EventEmitter<EngineEvent>;
+  readonly eventEmitter: ScrEventEmitter;
 
   /**
    * Creates a new execution plan.

@@ -1,4 +1,8 @@
-export type { ScrEventMap, ScrEventEmitter, ScrEventListener } from './emitter.js';
+export type {
+  ScrEventMap,
+  ScrEventEmitter,
+  ScrEventListener,
+} from './emitter.js';
 
 export {
   createScrEventEmitter,

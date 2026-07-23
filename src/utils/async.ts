@@ -28,7 +28,7 @@ export async function delay(ms: number): Promise<void> {
  */
 export async function withTimeout<T>(
   fn: () => Promise<T>,
-  timeoutMs: number,
+  timeoutMs: number
 ): Promise<T> {
   return new Promise((resolve, reject) => {
     const timeoutHandle = setTimeout(() => {
@@ -70,7 +70,7 @@ export async function retry<T>(
     initialDelay?: number;
     maxDelay?: number;
     factor?: number;
-  } = {},
+  } = {}
 ): Promise<T> {
   const {
     maxRetries = 3,
@@ -113,7 +113,7 @@ export async function retry<T>(
  */
 export function debounce<T extends (...args: unknown[]) => unknown>(
   fn: T,
-  waitMs: number,
+  waitMs: number
 ): (...args: Parameters<T>) => void {
   let timeoutHandle: NodeJS.Timeout | undefined;
 
@@ -142,7 +142,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
  */
 export function throttle<T extends (...args: unknown[]) => unknown>(
   fn: T,
-  limitMs: number,
+  limitMs: number
 ): (...args: Parameters<T>) => void {
   let lastCall = 0;
   let timeoutHandle: NodeJS.Timeout | undefined;
@@ -154,11 +154,14 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
       lastCall = now;
       fn(...args);
     } else if (!timeoutHandle) {
-      timeoutHandle = setTimeout(() => {
-        lastCall = Date.now();
-        timeoutHandle = undefined;
-        fn(...args);
-      }, limitMs - (now - lastCall));
+      timeoutHandle = setTimeout(
+        () => {
+          lastCall = Date.now();
+          timeoutHandle = undefined;
+          fn(...args);
+        },
+        limitMs - (now - lastCall)
+      );
     }
   };
 }
@@ -179,7 +182,7 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
  * ```
  */
 export async function runSeries<T>(
-  fns: Array<() => Promise<T>>,
+  fns: Array<() => Promise<T>>
 ): Promise<Array<T>> {
   const results: Array<T> = [];
 
@@ -207,7 +210,7 @@ export async function runSeries<T>(
  */
 export async function runParallel<T>(
   fns: Array<() => Promise<T>>,
-  limit: number,
+  limit: number
 ): Promise<Array<T>> {
   const results: Array<T> = [];
   const executing: Array<Promise<void>> = [];

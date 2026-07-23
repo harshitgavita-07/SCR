@@ -20,7 +20,7 @@ export default defineConfig({
     'events/index': 'src/events/index.ts',
   },
   format: ['esm', 'cjs'],
-  dts: true,
+  dts: false,
   splitting: false,
   sourcemap: true,
   clean: true,
