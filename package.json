@@ -1,11 +1,34 @@
 {
   "name": "@scr/runtime",
   "version": "0.1.0",
-  "description": "Screen Control Runtime - Production-grade runtime for AI agents to observe and control graphical applications",
+  "description": "Screen Control Runtime (SCR) — Production-grade runtime for AI agents to observe and control graphical applications.",
+  "license": "MIT",
+  "author": "Harshit Gavita",
   "type": "module",
-  "main": "./dist/index.js",
+
+  "homepage": "https://github.com/harshitgavita-07/SCR",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshitgavita-07/SCR.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harshitgavita-07/SCR/issues"
+  },
+
+  "publishConfig": {
+    "access": "public"
+  },
+
+  "sideEffects": false,
+
+  "engines": {
+    "node": ">=22"
+  },
+
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -81,75 +104,81 @@
       "types": "./dist/events/index.d.ts",
       "import": "./dist/events/index.js",
       "require": "./dist/events/index.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
+
   "bin": {
     "scr": "./dist/cli/bin.js"
   },
+
   "files": [
     "dist",
-    "src",
     "README.md",
     "LICENSE"
   ],
+
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "find src -name \"*.ts\" | xargs npx eslint --no-warn-ignored --no-ignore",
-    "lint:fix": "find src -name \"*.ts\" | xargs npx eslint --no-warn-ignored --no-ignore --fix",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\"",
+
+    "typecheck": "tsc --noEmit",
+
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "typecheck": "tsc --noEmit",
+
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+
     "docs": "typedoc --options typedoc.json",
-    "clean": "rm -rf dist coverage",
-    "prepare": "pnpm build"
+
+    "clean": "rimraf dist coverage",
+
+    "prepublishOnly": "pnpm build && pnpm test && pnpm typecheck"
   },
+
   "keywords": [
-    "screen-control",
+    "scr",
     "automation",
-    "ai-agents",
-    "browser-automation",
+    "browser",
     "playwright",
-    "runtime"
+    "runtime",
+    "ai",
+    "agent",
+    "desktop",
+    "mobile",
+    "testing"
   ],
-  "author": "SCR Contributors",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/scr/runtime.git"
-  },
-  "bugs": {
-    "url": "https://github.com/scr/runtime/issues"
-  },
-  "homepage": "https://github.com/scr/runtime#readme",
-  "engines": {
-    "node": ">=22.0.0"
-  },
+
   "dependencies": {
-    "@playwright/test": "^1.45.0",
+    "@playwright/test": "^1.61.1",
     "commander": "^12.1.0",
-    "pino": "^9.3.2",
+    "pino": "^9.14.0",
     "playwright": "^1.61.1",
-    "zod": "^3.23.8"
+    "zod": "^3.25.0"
   },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
-    "@vitest/coverage-v8": "^2.0.3",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "prettier": "^3.3.3",
-    "tsup": "^8.2.0",
-    "typedoc": "^0.26.4",
-    "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
-  },
+
   "peerDependencies": {
     "typescript": ">=5.0.0"
+  },
+
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.9.6",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.1",
+    "typedoc": "^0.26.11",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
   }
 }
