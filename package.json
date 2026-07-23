@@ -1,5 +1,5 @@
 {
-  "name": "@scr/runtime",
+  "name": "@scr-runtime/runtime",
   "version": "0.1.0",
   "description": "Screen Control Runtime (SCR) — Production-grade runtime for AI agents to observe and control graphical applications.",
   "license": "MIT",
