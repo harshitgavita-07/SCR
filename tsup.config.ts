@@ -1,0 +1,33 @@
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: {
+    index: 'src/index.ts',
+    'contracts/index': 'src/contracts/index.ts',
+    'runtime/index': 'src/runtime/index.ts',
+    'engine/index': 'src/engine/index.ts',
+    'planner/index': 'src/planner/index.ts',
+    'observer/index': 'src/observer/index.ts',
+    'verifier/index': 'src/verifier/index.ts',
+    'actions/index': 'src/actions/index.ts',
+    'sessions/index': 'src/sessions/index.ts',
+    'memory/index': 'src/memory/index.ts',
+    'registry/index': 'src/registry/index.ts',
+    'targets/chromium/index': 'src/targets/chromium/index.ts',
+    'sdk/index': 'src/sdk/index.ts',
+    'cli/index': 'src/cli/index.ts',
+    'cli/bin': 'src/cli/bin.ts',
+    'events/index': 'src/events/index.ts',
+  },
+  format: ['esm', 'cjs'],
+  dts: true,
+  splitting: false,
+  sourcemap: true,
+  clean: true,
+  treeshake: true,
+  minify: false,
+  target: 'node22',
+  outDir: 'dist',
+  external: [],
+  noExternal: [],
+});

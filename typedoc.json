@@ -1,0 +1,38 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/index.ts",
+    "src/contracts/index.ts",
+    "src/runtime/index.ts",
+    "src/engine/index.ts",
+    "src/planner/index.ts",
+    "src/observer/index.ts",
+    "src/verifier/index.ts",
+    "src/actions/index.ts",
+    "src/sessions/index.ts",
+    "src/memory/index.ts",
+    "src/registry/index.ts",
+    "src/targets/chromium/index.ts",
+    "src/sdk/index.ts",
+    "src/cli/index.ts",
+    "src/events/index.ts"
+  ],
+  "out": "docs/api",
+  "exclude": ["**/*.test.ts", "**/node_modules/**"],
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": false,
+  "readme": "README.md",
+  "name": "Screen Control Runtime",
+  "theme": "default",
+  "plugin": [],
+  "sort": ["source-order", "alphabetical"],
+  "categorizeByGroup": true,
+  "categoryOrder": ["*", "Other"],
+  "navigationLinks": {
+    "GitHub": "https://github.com/scr/runtime"
+  },
+  "gitRevision": "main",
+  "hideGenerator": true
+}
