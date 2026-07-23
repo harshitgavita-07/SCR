@@ -6,43 +6,39 @@ import type { ScrId } from '../contracts/types.js';
  */
 export interface ScrEventMap {
   /** Runtime started */
-  'runtime:start': { timestamp: number };
+  'runtime:start': [timestamp: number];
   /** Runtime stopped */
-  'runtime:stop': { timestamp: number; reason?: string };
+  'runtime:stop': [timestamp: number, reason?: string];
   /** Runtime error */
-  'runtime:error': { timestamp: number; error: Error };
+  'runtime:error': [timestamp: number, error: Error];
   /** Session created */
-  'session:create': { sessionId: ScrId; timestamp: number };
+  'session:create': [sessionId: ScrId, timestamp: number];
   /** Session destroyed */
-  'session:destroy': { sessionId: ScrId; timestamp: number };
+  'session:destroy': [sessionId: ScrId, timestamp: number];
   /** Action started */
-  'action:start': { actionId: string; actionType: string; timestamp: number };
+  'action:start': [actionId: string, actionType: string, timestamp: number];
   /** Action completed */
-  'action:complete': {
-    actionId: string;
-    actionType: string;
-    result: unknown;
-    timestamp: number;
-  };
+  'action:complete': [
+    actionId: string,
+    actionType: string,
+    result: unknown,
+    timestamp: number,
+  ];
   /** Action failed */
-  'action:fail': {
-    actionId: string;
-    actionType: string;
-    error: Error;
-    timestamp: number;
-  };
+  'action:fail': [
+    actionId: string,
+    actionType: string,
+    error: Error,
+    timestamp: number,
+  ];
   /** State changed */
-  'state:change': {
-    previousState: string;
-    newState: string;
-    timestamp: number;
-  };
+  'state:change': [previousState: string, newState: string, timestamp: number];
   /** Observation captured */
-  'observation:capture': {
-    observationId: string;
-    type: string;
-    timestamp: number;
-  };
+  'observation:capture': [
+    observationId: string,
+    type: string,
+    timestamp: number,
+  ];
 }
 
 /**
@@ -58,8 +54,8 @@ export type ScrEventEmitter = EventEmitter<ScrEventMap>;
  * @example
  * ```typescript
  * const emitter = createScrEventEmitter();
- * emitter.on('runtime:start', (data) => {
- *   console.log('Runtime started at', data.timestamp);
+ * emitter.on('runtime:start', (timestamp) => {
+ *   console.log('Runtime started at', timestamp);
  * });
  * ```
  */
@@ -71,7 +67,7 @@ export function createScrEventEmitter(): ScrEventEmitter {
  * Type-safe event listener function.
  */
 export type ScrEventListener<T extends keyof ScrEventMap> = (
-  payload: ScrEventMap[T],
+  ...args: ScrEventMap[T]
 ) => void | Promise<void>;
 
 /**
@@ -84,8 +80,8 @@ export type ScrEventListener<T extends keyof ScrEventMap> = (
  *
  * @example
  * ```typescript
- * const unsubscribe = subscribeToEvent(emitter, 'runtime:start', (data) => {
- *   console.log('Started:', data.timestamp);
+ * const unsubscribe = subscribeToEvent(emitter, 'runtime:start', (timestamp) => {
+ *   console.log('Started:', timestamp);
  * });
  *
  * // Later...
@@ -95,11 +91,11 @@ export type ScrEventListener<T extends keyof ScrEventMap> = (
 export function subscribeToEvent<T extends keyof ScrEventMap>(
   emitter: ScrEventEmitter,
   event: T,
-  listener: ScrEventListener<T>,
+  listener: (...args: ScrEventMap[T]) => void | Promise<void>
 ): () => void {
-  emitter.on(event, listener);
+  emitter.on(event, listener as never);
   return () => {
-    emitter.off(event, listener);
+    emitter.off(event, listener as never);
   };
 }
 
@@ -109,36 +105,36 @@ export function subscribeToEvent<T extends keyof ScrEventMap>(
  * @param emitter - The event emitter
  * @param event - The event to wait for
  * @param timeoutMs - Optional timeout in milliseconds
- * @returns A promise that resolves with the event payload
+ * @returns A promise that resolves with the event payload arguments
  * @throws {Error} If the timeout is reached
  *
  * @example
  * ```typescript
- * const payload = await waitForEvent(emitter, 'runtime:start', 5000);
- * console.log('Runtime started with payload:', payload);
+ * const [timestamp] = await waitForEvent(emitter, 'runtime:start', 5000);
+ * console.log('Runtime started at:', timestamp);
  * ```
  */
 export async function waitForEvent<T extends keyof ScrEventMap>(
   emitter: ScrEventEmitter,
   event: T,
-  timeoutMs?: number,
+  timeoutMs?: number
 ): Promise<ScrEventMap[T]> {
   return new Promise((resolve, reject) => {
     let timeoutHandle: NodeJS.Timeout | undefined;
 
-    const handler = (payload: ScrEventMap[T]) => {
+    const handler = (...args: ScrEventMap[T]) => {
       if (timeoutHandle) {
         clearTimeout(timeoutHandle);
       }
-      emitter.off(event, handler);
-      resolve(payload);
+      emitter.off(event, handler as never);
+      resolve(args);
     };
 
-    emitter.on(event, handler);
+    emitter.on(event, handler as never);
 
     if (timeoutMs !== undefined) {
       timeoutHandle = setTimeout(() => {
-        emitter.off(event, handler);
+        emitter.off(event, handler as never);
         reject(new Error(`Timeout waiting for event: ${event}`));
       }, timeoutMs);
     }
@@ -150,17 +146,17 @@ export async function waitForEvent<T extends keyof ScrEventMap>(
  *
  * @param emitter - The event emitter
  * @param event - The event name
- * @param payload - The event payload
+ * @param args - The event payload arguments
  *
  * @example
  * ```typescript
- * emitEvent(emitter, 'runtime:start', { timestamp: Date.now() });
+ * emitEvent(emitter, 'runtime:start', Date.now());
  * ```
  */
 export function emitEvent<T extends keyof ScrEventMap>(
   emitter: ScrEventEmitter,
   event: T,
-  payload: ScrEventMap[T],
+  ...args: ScrEventMap[T]
 ): void {
-  emitter.emit(event, payload);
+  emitter.emit(event, ...(args as never));
 }

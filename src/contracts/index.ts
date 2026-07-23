@@ -4,12 +4,12 @@ export type {
   ScrEntity,
   ScrErrorCode,
   ScrErrorData,
+  ScrConfig,
 } from './types.js';
 
 export {
   generateScrId,
   ScrError,
-  ScrErrorCode,
   createInvalidConfigError,
   createNotFoundError,
   createAlreadyExistsError,

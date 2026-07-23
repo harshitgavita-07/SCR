@@ -1,1 +1,2 @@
-export type { ChromiumConfig, ViewportSize, ChromiumTarget } from './chromium.js';
+export type { ChromiumConfig, ViewportSize } from './chromium.js';
+export { ChromiumTargetImpl, createChromiumTarget } from './chromium.js';

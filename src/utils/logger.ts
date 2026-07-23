@@ -1,4 +1,4 @@
-import pino, { type Logger as PinoLogger, type LoggerOptions } from 'pino';
+import pino, { type LoggerOptions } from 'pino';
 import type { ScrId } from '../contracts/types.js';
 
 /**
@@ -108,7 +108,7 @@ export function createScrLogger(config: LoggerConfig = {}): ScrLogger {
  */
 export function createSessionLogger(
   sessionId: ScrId,
-  config: LoggerConfig = {},
+  config: LoggerConfig = {}
 ): ScrLogger {
   const logger = createScrLogger(config);
   return logger.child({ sessionId, module: 'session' });
@@ -129,7 +129,7 @@ export function createSessionLogger(
  */
 export function createActionLogger(
   actionId: string,
-  config: LoggerConfig = {},
+  config: LoggerConfig = {}
 ): ScrLogger {
   const logger = createScrLogger(config);
   return logger.child({ actionId, module: 'action' });
