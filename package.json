@@ -90,6 +90,11 @@
       "import": "./dist/targets/chromium/index.js",
       "require": "./dist/targets/chromium/index.cjs"
     },
+    "./targets/terminal": {
+      "types": "./dist/targets/terminal/index.d.ts",
+      "import": "./dist/targets/terminal/index.js",
+      "require": "./dist/targets/terminal/index.cjs"
+    },
     "./sdk": {
       "types": "./dist/sdk/index.d.ts",
       "import": "./dist/sdk/index.js",

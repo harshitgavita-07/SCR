@@ -14,6 +14,7 @@ export default defineConfig({
     'memory/index': 'src/memory/index.ts',
     'registry/index': 'src/registry/index.ts',
     'targets/chromium/index': 'src/targets/chromium/index.ts',
+    'targets/terminal/index': 'src/targets/terminal/index.ts',
     'sdk/index': 'src/sdk/index.ts',
     'cli/index': 'src/cli/index.ts',
     'cli/bin': 'src/cli/bin.ts',
