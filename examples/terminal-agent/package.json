@@ -1,0 +1,16 @@
+{
+  "name": "terminal-agent-example",
+  "version": "1.0.0",
+  "description": "SCR Runtime terminal automation example",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "@scr/runtime": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  }
+}

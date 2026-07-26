@@ -1,0 +1,23 @@
+# Code Owners for SCR Runtime
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners
+* @scr/maintainers
+
+# Core runtime
+/src/ @scr/maintainers @scr/core
+
+# CLI
+/packages/cli/ @scr/maintainers @scr/cli
+
+# MCP Server
+/packages/mcp-server/ @scr/maintainers @scr/mcp
+
+# Documentation
+/docs/ @scr/maintainers @scr/docs
+
+# Examples
+/examples/ @scr/maintainers
+
+# GitHub configuration
+/.github/ @scr/maintainers
