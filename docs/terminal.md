@@ -15,7 +15,7 @@ SCR Runtime provides safe terminal execution with:
 ## Quick Start
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 await runtime.start();

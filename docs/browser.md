@@ -13,7 +13,7 @@ SCR Runtime provides browser automation through Playwright, supporting:
 ## Quick Start
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 await runtime.start();

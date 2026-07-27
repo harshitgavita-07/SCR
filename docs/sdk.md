@@ -5,17 +5,17 @@ TypeScript SDK for programmatic access to SCR Runtime.
 ## Installation
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 # or
-npm install @scr/runtime
+npm install @scr-runtime/runtime
 # or
-yarn add @scr/runtime
+yarn add @scr-runtime/runtime
 ```
 
 ## Quick Start
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 async function main() {
   const runtime = new Runtime({
@@ -316,7 +316,7 @@ try {
 ### Error Types
 
 ```typescript
-import { ScrError, ScrErrorCode } from '@scr/runtime';
+import { ScrError, ScrErrorCode } from '@scr-runtime/runtime';
 
 // Common error codes
 ScrErrorCode.INVALID_CONFIG;
@@ -347,7 +347,7 @@ import type {
   FilesystemEngine,
   Observer,
   Verifier,
-} from '@scr/runtime';
+} from '@scr-runtime/runtime';
 ```
 
 ## Best Practices

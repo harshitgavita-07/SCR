@@ -6,7 +6,7 @@
  * Run: pnpm start
  */
 
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 async function main() {
   console.log('🚀 Starting Desktop Agent Example\n');

@@ -13,7 +13,7 @@ A session in SCR Runtime:
 ## Creating Sessions
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 

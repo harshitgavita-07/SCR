@@ -7,7 +7,7 @@
     "start": "tsx index.ts"
   },
   "dependencies": {
-    "@scr/runtime": "workspace:*"
+    "@scr-runtime/runtime": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^4.0.0",

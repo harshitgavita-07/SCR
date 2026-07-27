@@ -258,7 +258,7 @@ const runtime = new Runtime({
 ### Sanitize User Input
 
 ```typescript
-import { sanitize } from '@scr/runtime/utils';
+import { sanitize } from '@scr-runtime/runtime/utils';
 
 // Never pass unsanitized input to commands
 const userInput = getUserInput();

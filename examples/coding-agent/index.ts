@@ -6,7 +6,7 @@
  * Run: pnpm start
  */
 
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 import * as path from 'path';
 
 async function main() {

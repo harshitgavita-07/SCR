@@ -37,11 +37,11 @@ Agent frameworks like LangGraph, CrewAI, or AutoGen handle planning and reasonin
 ### How do I install SCR Runtime?
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 # or
-npm install @scr/runtime
+npm install @scr-runtime/runtime
 # or
-yarn add @scr/runtime
+yarn add @scr-runtime/runtime
 ```
 
 ### Do I need to install Playwright separately?
@@ -61,7 +61,7 @@ Currently, SCR Runtime requires Node.js. Python bindings are planned for a futur
 ### How do I get started?
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 await runtime.start();
@@ -100,7 +100,7 @@ Yes. SCR Runtime is provider-agnostic. Connect via:
 
 ```typescript
 import { StateGraph } from '@langchain/langgraph';
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -190,7 +190,7 @@ const elements = await runtime.observer.detectElements();
 
 ## Troubleshooting
 
-### "Cannot find module '@scr/runtime'"
+### "Cannot find module '@scr-runtime/runtime'"
 
 Ensure installation:
 
@@ -287,7 +287,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
 Quick start:
 
 ```bash
-git clone https://github.com/scr/runtime.git
+git clone https://github.com/harshitgavita-07/SCR.git
 cd runtime
 pnpm install
 pnpm build
@@ -296,11 +296,11 @@ pnpm test
 
 ### Where's the source code?
 
-Available at: https://github.com/scr/runtime
+Available at: https://github.com/harshitgavita-07/SCR
 
 ### How do I report bugs?
 
-Open an issue: https://github.com/scr/runtime/issues
+Open an issue: https://github.com/harshitgavita-07/SCR/issues
 
 Include:
 - SCR Runtime version
@@ -351,15 +351,15 @@ See [ROADMAP.md](../ROADMAP.md) for details.
 
 ### How can I request features?
 
-Open a discussion: https://github.com/scr/runtime/discussions
+Open a discussion: https://github.com/harshitgavita-07/SCR/discussions
 
 ## Support
 
 ### Where can I get help?
 
 - **Documentation**: This docs folder
-- **Discussions**: https://github.com/scr/runtime/discussions
-- **Issues**: https://github.com/scr/runtime/issues
+- **Discussions**: https://github.com/harshitgavita-07/SCR/discussions
+- **Issues**: https://github.com/harshitgavita-07/SCR/issues
 - **Email**: maintainers@scr.dev (for enterprise)
 
 ### Is there a community?

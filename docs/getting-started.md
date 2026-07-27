@@ -20,11 +20,11 @@ pnpm --version  # Should be v9 or higher
 ### Step 1: Install Package
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 # or
-npm install @scr/runtime
+npm install @scr-runtime/runtime
 # or
-yarn add @scr/runtime
+yarn add @scr-runtime/runtime
 ```
 
 ### Step 2: Install CLI (Optional)
@@ -32,7 +32,7 @@ yarn add @scr/runtime
 For command-line tools:
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 ```
 
 ### Step 3: Verify Installation
@@ -52,7 +52,7 @@ scr doctor
 Create a file `agent.ts`:
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 async function main() {
   // Initialize runtime
@@ -121,7 +121,7 @@ pnpm start
 
 ### Common Issues
 
-**"Cannot find module '@scr/runtime'"**
+**"Cannot find module '@scr-runtime/runtime'"**
 
 Ensure the package is installed:
 
@@ -148,5 +148,5 @@ Check filesystem permissions. SCR Runtime may need access to:
 ### Get Help
 
 - [FAQ](./faq.md) — Frequently asked questions
-- [Discussions](https://github.com/scr/runtime/discussions) — Community support
-- [Issues](https://github.com/scr/runtime/issues) — Bug reports
+- [Discussions](https://github.com/harshitgavita-07/SCR/discussions) — Community support
+- [Issues](https://github.com/harshitgavita-07/SCR/issues) — Bug reports

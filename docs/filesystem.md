@@ -15,7 +15,7 @@ All operations respect configured permissions and can be audited.
 ## Basic Usage
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 

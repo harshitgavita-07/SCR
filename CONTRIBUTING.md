@@ -18,7 +18,7 @@ Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md). We are commi
 
 ```bash
 # Clone the repository
-git clone https://github.com/scr/runtime.git
+git clone https://github.com/harshitgavita-07/SCR.git
 cd runtime
 
 # Install dependencies
@@ -185,8 +185,8 @@ Releases follow semantic versioning (MAJOR.MINOR.PATCH):
 
 ## Questions?
 
-- Check existing [issues](https://github.com/scr/runtime/issues)
-- Start a [discussion](https://github.com/scr/runtime/discussions)
+- Check existing [issues](https://github.com/harshitgavita-07/SCR/issues)
+- Start a [discussion](https://github.com/harshitgavita-07/SCR/discussions)
 - Read the [FAQ](./docs/faq.md)
 
 ## License

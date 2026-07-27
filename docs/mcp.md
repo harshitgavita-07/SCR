@@ -9,7 +9,7 @@ The MCP server allows AI clients (Claude Desktop, Cursor, etc.) to use SCR Runti
 ## Installation
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 ```
 
 ## Configuration
@@ -312,7 +312,7 @@ Require confirmation for dangerous operations:
 ### Create MCP Server
 
 ```typescript
-import { createMCPServer } from '@scr/runtime/mcp';
+import { createMCPServer } from '@scr-runtime/runtime/mcp';
 
 const server = createMCPServer({
   name: 'my-scr-server',

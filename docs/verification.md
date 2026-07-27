@@ -14,7 +14,7 @@ Verification ensures your automation is reliable by:
 ## Quick Start
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 await runtime.start();
@@ -315,7 +315,7 @@ try {
 ### Verification Errors
 
 ```typescript
-import { ScrError, ScrErrorCode } from '@scr/runtime';
+import { ScrError, ScrErrorCode } from '@scr-runtime/runtime';
 
 try {
   await runtime.verify(() => false);

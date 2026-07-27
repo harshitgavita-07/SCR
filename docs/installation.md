@@ -12,19 +12,19 @@ This guide covers installing SCR Runtime in your project.
 ### Using pnpm (Recommended)
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 ```
 
 ### Using npm
 
 ```bash
-npm install @scr/runtime
+npm install @scr-runtime/runtime
 ```
 
 ### Using yarn
 
 ```bash
-yarn add @scr/runtime
+yarn add @scr-runtime/runtime
 ```
 
 ## Install CLI (Global)
@@ -32,11 +32,11 @@ yarn add @scr/runtime
 To use the `scr` command-line interface globally:
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 # or
-npm install -g @scr/runtime
+npm install -g @scr-runtime/runtime
 # or
-yarn global add @scr/runtime
+yarn global add @scr-runtime/runtime
 ```
 
 ## Verify Installation

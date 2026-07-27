@@ -119,9 +119,9 @@ Where actual execution happens:
 ## Module Dependencies
 
 ```
-@scr/runtime (main export)
+@scr-runtime/runtime (main export)
 ├── @scr/contracts (types and interfaces)
-├── @scr/runtime/core (runtime implementation)
+├── @scr-runtime/runtime/core (runtime implementation)
 ├── @scr/engine (execution engines)
 ├── @scr/observer (screen observation)
 ├── @scr/verifier (state verification)
@@ -255,7 +255,7 @@ await runtime.browser.click('#submit', {
 Implement a new target:
 
 ```typescript
-import { Target } from '@scr/runtime';
+import { Target } from '@scr-runtime/runtime';
 
 class CustomTarget implements Target {
   async initialize(): Promise<void> { /* ... */ }

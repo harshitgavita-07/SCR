@@ -9,7 +9,7 @@ The main entry point for all SCR operations.
 ### Constructor
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime(config?: RuntimeConfig);
 ```
@@ -423,7 +423,7 @@ runtime.removeAllListeners();
 ### Error Types
 
 ```typescript
-import { ScrError, ScrErrorCode } from '@scr/runtime';
+import { ScrError, ScrErrorCode } from '@scr-runtime/runtime';
 
 try {
   await runtime.browser.click('#nonexistent');
@@ -475,7 +475,7 @@ import type {
   Session,
   ScrError,
   ScrErrorCode,
-} from '@scr/runtime';
+} from '@scr-runtime/runtime';
 ```
 
 ## Next Steps

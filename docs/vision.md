@@ -14,7 +14,7 @@ SCR Runtime provides vision capabilities for AI agents to understand what's on s
 ## Quick Start
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 await runtime.start();

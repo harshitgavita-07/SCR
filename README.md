@@ -2,7 +2,7 @@
 
 > **A production-grade runtime that lets AI agents safely observe and control graphical applications.**
 
-[![npm version](https://img.shields.io/npm/v/@scr/runtime.svg)](https://www.npmjs.com/package/@scr/runtime)
+[![npm version](https://img.shields.io/npm/v/@scr-runtime/runtime.svg)](https://www.npmjs.com/package/@scr-runtime/runtime)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue.svg)](https://www.typescriptlang.org)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22-green.svg)](https://nodejs.org)
@@ -84,17 +84,17 @@ Think of SCR Runtime like:
 ### Install Package
 
 ```bash
-pnpm add @scr/runtime
+pnpm add @scr-runtime/runtime
 # or
-npm install @scr/runtime
+npm install @scr-runtime/runtime
 # or
-yarn add @scr/runtime
+yarn add @scr-runtime/runtime
 ```
 
 ### Install CLI (Optional)
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 ```
 
 ### Verify Installation
@@ -111,7 +111,7 @@ scr doctor
 ### 1. Basic Setup
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime({
   appName: 'my-agent',
@@ -124,7 +124,7 @@ await runtime.start();
 ### 2. Browser Control
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -141,7 +141,7 @@ const html = await runtime.browser.content();
 ### 3. Desktop Control
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -159,7 +159,7 @@ await runtime.desktop.focus(window);
 ### 4. Terminal Execution
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -172,7 +172,7 @@ console.log(result.exitCode);
 ### 5. Observation & Verification
 
 ```typescript
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -339,7 +339,7 @@ SCR Runtime integrates with popular AI agent frameworks:
 
 ```typescript
 import { Agent } from '@openai/agents';
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 const agent = new Agent({
@@ -354,7 +354,7 @@ const agent = new Agent({
 
 ```typescript
 import { StateGraph } from '@langchain/langgraph';
-import { Runtime } from '@scr/runtime';
+import { Runtime } from '@scr-runtime/runtime';
 
 const runtime = new Runtime();
 
@@ -549,7 +549,7 @@ We welcome contributions! See our guidelines:
 ### Development Setup
 
 ```bash
-git clone https://github.com/scr/runtime.git
+git clone https://github.com/harshitgavita-07/SCR.git
 cd runtime
 pnpm install
 pnpm build
@@ -615,6 +615,6 @@ Inspired by the maintainers of Docker, FastAPI, LangGraph, uv, and Bun.
 
 **SCR Runtime** — The execution layer for AI.
 
-[Documentation](./docs/) • [Examples](./examples/) • [Discussions](https://github.com/scr/runtime/discussions) • [Issues](https://github.com/scr/runtime/issues)
+[Documentation](./docs/) • [Examples](./examples/) • [Discussions](https://github.com/harshitgavita-07/SCR/discussions) • [Issues](https://github.com/harshitgavita-07/SCR/issues)
 
 </div>

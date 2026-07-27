@@ -21,7 +21,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
 
-// Runtime types (would import from @scr/runtime in production)
+// Runtime types (would import from @scr-runtime/runtime in production)
 interface ScrRuntime {
   browser: {
     goto(url: string): Promise<void>;
@@ -332,7 +332,7 @@ function createMcpServer(): Server {
 async function main(): Promise<void> {
   console.error('Starting SCR MCP Server...');
 
-  // Initialize runtime (in production, this would import from @scr/runtime)
+  // Initialize runtime (in production, this would import from @scr-runtime/runtime)
   // For now, we'll use a placeholder that demonstrates the pattern
   runtime = await initializeRuntime();
 
@@ -345,11 +345,11 @@ async function main(): Promise<void> {
 
 /**
  * Initialize SCR Runtime instance.
- * This is a placeholder - in production, import from @scr/runtime
+ * This is a placeholder - in production, import from @scr-runtime/runtime
  */
 async function initializeRuntime(): Promise<ScrRuntime> {
   // Placeholder implementation
-  // In production: import { createScrRuntime } from '@scr/runtime';
+  // In production: import { createScrRuntime } from '@scr-runtime/runtime';
   return {
     browser: {
       goto: async (url: string) => {

@@ -172,8 +172,8 @@ These belong to higher-level systems like AIOS or agent frameworks.
 We welcome contributions! See our [Contributing Guide](./CONTRIBUTING.md) for details.
 
 To influence the roadmap:
-1. Open a [discussion](https://github.com/scr/runtime/discussions)
-2. Submit a [feature request](https://github.com/scr/runtime/issues/new?template=feature_request.md)
+1. Open a [discussion](https://github.com/harshitgavita-07/SCR/discussions)
+2. Submit a [feature request](https://github.com/harshitgavita-07/SCR/issues/new?template=feature_request.md)
 3. Contribute code via pull request
 
 ---

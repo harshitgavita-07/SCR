@@ -5,7 +5,7 @@ Command-line interface for SCR Runtime.
 ## Installation
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 ```
 
 Verify installation:
@@ -344,7 +344,7 @@ echo "Automation complete"
 
 ```yaml
 - name: Install SCR
-  run: pnpm add -g @scr/runtime
+  run: pnpm add -g @scr-runtime/runtime
 
 - name: Run browser tests
   run: |
@@ -359,7 +359,7 @@ echo "Automation complete"
 Ensure global installation:
 
 ```bash
-pnpm add -g @scr/runtime
+pnpm add -g @scr-runtime/runtime
 ```
 
 ### Permission Errors
