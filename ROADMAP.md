@@ -42,7 +42,7 @@ SCR Runtime is the execution layer for AI. Our goal is to provide a production-g
 
 ## v0.2 — Expansion
 
-**Target**: Q4 2024
+**Target**: Q4 2026
 
 ### Desktop Control
 - [ ] Full desktop control on Windows (UI Automation)
@@ -76,7 +76,7 @@ SCR Runtime is the execution layer for AI. Our goal is to provide a production-g
 
 ## v0.3 — Advanced Features
 
-**Target**: Q1 2025
+**Target**: Q1 2027
 
 ### Debugging & Replay
 - [ ] Action recording
@@ -109,7 +109,7 @@ SCR Runtime is the execution layer for AI. Our goal is to provide a production-g
 
 ## v1.0 — Production Stable
 
-**Target**: Q2 2025
+**Target**: Q2 2027
 
 ### API Stability
 - [ ] Frozen public API
