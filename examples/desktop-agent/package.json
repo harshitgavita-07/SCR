@@ -1,0 +1,16 @@
+{
+  "name": "desktop-agent-example",
+  "version": "1.0.0",
+  "description": "SCR Runtime desktop control example",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "@scr-runtime/runtime": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  }
+}
