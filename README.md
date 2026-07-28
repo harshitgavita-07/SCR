@@ -100,8 +100,8 @@ pnpm add -g @scr-runtime/runtime
 ### Verify Installation
 
 ```bash
-scr version
-scr doctor
+scr --version / -V
+
 ```
 
 ---
